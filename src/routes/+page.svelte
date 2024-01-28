@@ -38,25 +38,19 @@
 	<TwitterCard name="foobar" wallets={[]}>
 		<img src="/images/wallet_back.png" />
 	</TwitterCard>
-	<TwitterCard name="foobar" wallets={wallets.slice(0, 2)}>
-		<img src="/images/wallet_back.png" />
-	</TwitterCard>
+
 	<TwitterCard name="foobar" {wallets}>
 		<img src="/images/wallet_back.png" />
 	</TwitterCard>
+	
+	<TwitterCard name="foobar" wallets={wallets.slice(0, 2)}>
+		<img src="/images/wallet_back.png" />
+	</TwitterCard>
+	
 </div>
 
 <style lang="postcss">
 	.app {
 		@apply relative;
-	}
-
-	.app::after {
-		@apply absolute inset-0;
-		content: '';
-		z-index: 0;
-		background-image: url('/images/background.png');
-		background-repeat: repeat;
-		filter: contrast(1.2) brightness(0.5);
 	}
 </style>

@@ -10,46 +10,61 @@
 	$: restWallets = wallets.slice(4);
 </script>
 
-<div
-	class="twitter-card flex gap-8 justify-between border border-[#404040] rounded-3xl bg-white/30 backdrop-blur-3xl text-white z-[1]"
->
-	<div class="flex flex-col justify-between py-11 pl-14">
-		<div class="image-container w-32 h-32">
-			<slot />
+<div class="twitter-card flex justify-center items-center">
+	<div
+		class="twitter-card-inner z-[1] rounded-3xl bg-white/30 backdrop-blur-3xl text-white flex justify-between gap-8"
+	>
+		<div class="flex flex-col justify-between py-11 pl-14">
+			<div class="image-container w-32 h-32">
+				<slot />
+			</div>
+
+			<div class="flex flex-col">
+				<div class="text-6xl font-bold">{name}<span class="opacity-50">/</span></div>
+				<a href="https://clusters.xyz/{name}" class="text-4xl opacity-50 font-medium"
+					>cluster.xyz/{name}</a
+				>
+			</div>
 		</div>
 
-		<div class="flex flex-col">
-			<div class="text-6xl font-bold">{name}<span class="opacity-50">/</span></div>
-			<a href="https://clusters.xyz/{name}" class="text-4xl opacity-50 font-medium"
-				>cluster.xyz/{name}</a
-			>
-		</div>
-	</div>
+		<div class="flex flex-col justify-between gap-5 p-4 flex-1">
+			{#each firstFourWallets as wallet}
+				{#if wallet}
+					<TwitterCardWallet {name} {wallet} />
+				{:else}
+					<TwitterCardWalletPlaceholder />
+				{/if}
+			{/each}
 
-	<div class="flex flex-col justify-between gap-5 p-4 flex-1">
-		{#each firstFourWallets as wallet}
-			{#if wallet}
-				<TwitterCardWallet {name} {wallet} />
-			{:else}
-				<TwitterCardWalletPlaceholder />
+			{#if restWallets.length}
+				<button class="h-11 border border-white/30 text-xl opacity-50 font-medium py-2 rounded-xl"
+					>and {restWallets.length} more</button
+				>
 			{/if}
-		{/each}
-
-		{#if restWallets.length}
-			<button class="h-11 border border-white/30 text-xl opacity-50 font-medium py-2 rounded-xl"
-				>and {restWallets.length} more</button
-			>
-		{/if}
+		</div>
 	</div>
 </div>
 
 <style lang="postcss">
 	.twitter-card {
-		min-width: 700px;
-		width: auto;
+		@apply relative min-h-[600px];
+
+		height: 350px;
+		aspect-ratio: 1.91 / 1; /** width = height * 1.91 */
+	}
+
+	.twitter-card::after {
+		@apply absolute inset-0 bg-contain bg-no-repeat z-0;
+		content: '';
+		background-image: url('/images/background.png');
+		filter: contrast(1.2) brightness(0.5);
+	}
+
+	.twitter-card-inner {
+		background: linear-gradient(222deg, rgb(255 255 255/ 0.34) 8.42%, rgb(255 255 255/ 0) 149.09%);
+
+		width: fit-content;
 		min-height: fit-content;
-		height: auto;
-		aspect-ratio: 1.91/1; /** width = height * 1.91 */
 	}
 
 	.image-container :global(img) {
