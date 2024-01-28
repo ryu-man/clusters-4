@@ -13,7 +13,7 @@
 <div class="twitter-card flex justify-center items-center">
 	<img src="/images/background.png" />
 	<div
-		class="twitter-card-inner z-[1] rounded-3xl bg-white/30 backdrop-blur-3xl text-white flex justify-between gap-8"
+		class="twitter-card-inner z-[1] rounded-3xl bg-white/30 backdrop-blur-3xl text-white flex justify-between"
 	>
 		<div class="flex flex-col justify-between py-12 pl-14">
 			<div class="image-container w-32 h-32">
@@ -21,12 +21,12 @@
 			</div>
 
 			<div class="flex flex-col">
-				<div class="text-[58px] leading-[140%] font-bold">
+				<div class="text-[48px] leading-[140%] font-bold">
 					{name}<span class="opacity-50">/</span>
 				</div>
 				<a
 					href="https://clusters.xyz/{name}"
-					class="text-[36px] leading-[130%] opacity-50 font-medium">cluster.xyz/{name}</a
+					class="text-[32px] leading-[130%] opacity-50 font-medium">cluster.xyz/{name}</a
 				>
 			</div>
 		</div>
