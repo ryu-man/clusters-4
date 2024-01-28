@@ -57,9 +57,17 @@
 	}
 
 	.twitter-card::after {
-		@apply absolute inset-0 bg-cover bg-no-repeat z-0;
+		@apply absolute inset-0 z-0;
 		content: '';
-		background-image: url('/images/background.png');
+		background:
+			radial-gradient(
+				109.08% 109.08% at 50% 50%,
+				rgb(0 0 0) 0%,
+				rgb(0 0 0/ 0.82) 0.01%,
+				rgb(0 0 0/ 0.21) 100%
+			),
+			rgb(0 0 0/ 0.4) url('/images/background.png') no-repeat;
+		background-size: cover;
 		filter: contrast(1.2) brightness(0.5);
 	}
 
