@@ -7,10 +7,10 @@
 </script>
 
 <div
-	class="twitter-card-item flex items-center gap-[10px] border border-white/30 bg-white/10 py-4 px-5 rounded-xl text-xl font-medium h-[72px] min-w-80"
+	class="twitter-card-item flex items-center gap-[10px] border border-white/30 bg-white/10 py-4 px-5 rounded-xl text-[20px] leading-none font-medium h-[72px] min-w-80"
 >
 	<StackedChains chainIds={wallet.chainIds} width={40} />
-    
+
 	<div>
 		<span class="opacity-50">{name}</span>
 		<span>/{wallet.name}</span>

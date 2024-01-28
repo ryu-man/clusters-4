@@ -14,20 +14,23 @@
 	<div
 		class="twitter-card-inner z-[1] rounded-3xl bg-white/30 backdrop-blur-3xl text-white flex justify-between gap-8"
 	>
-		<div class="flex flex-col justify-between py-11 pl-14">
+		<div class="flex flex-col justify-between py-12 pl-14">
 			<div class="image-container w-32 h-32">
 				<slot />
 			</div>
 
 			<div class="flex flex-col">
-				<div class="text-6xl font-bold">{name}<span class="opacity-50">/</span></div>
-				<a href="https://clusters.xyz/{name}" class="text-4xl opacity-50 font-medium"
-					>cluster.xyz/{name}</a
+				<div class="text-[58px] leading-[140%] font-bold">
+					{name}<span class="opacity-50">/</span>
+				</div>
+				<a
+					href="https://clusters.xyz/{name}"
+					class="text-[36px] leading-[130%] opacity-50 font-medium">cluster.xyz/{name}</a
 				>
 			</div>
 		</div>
 
-		<div class="flex flex-col justify-between gap-5 p-4 flex-1">
+		<div class="flex flex-col justify-center gap-5 p-4 flex-1">
 			{#each firstFourWallets as wallet}
 				{#if wallet}
 					<TwitterCardWallet {name} {wallet} />
@@ -47,14 +50,14 @@
 
 <style lang="postcss">
 	.twitter-card {
-		@apply relative min-h-[600px];
+		@apply relative w-full min-h-[350px];
 
 		height: fit-content;
 		aspect-ratio: 1.91 / 1; /** width = height * 1.91 */
 	}
 
 	.twitter-card::after {
-		@apply absolute inset-0 bg-contain bg-no-repeat z-0;
+		@apply absolute inset-0 bg-cover bg-no-repeat z-0;
 		content: '';
 		background-image: url('/images/background.png');
 		filter: contrast(1.2) brightness(0.5);
