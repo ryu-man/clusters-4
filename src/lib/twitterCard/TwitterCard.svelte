@@ -37,15 +37,19 @@
 
 		{#if restWallets.length}
 			<button class="h-11 border border-white/30 text-xl opacity-50 font-medium py-2 rounded-xl"
-				>and {restWallets.length} more</button>
+				>and {restWallets.length} more</button
+			>
 		{/if}
 	</div>
 </div>
 
 <style lang="postcss">
 	.twitter-card {
-		width: 700px;
-		min-height: 350px;
+		min-width: 700px;
+		width: auto;
+		min-height: fit-content;
+		height: auto;
+		aspect-ratio: 1.91/1; /** width = height * 1.91 */
 	}
 
 	.image-container :global(img) {
