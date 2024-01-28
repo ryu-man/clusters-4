@@ -49,7 +49,7 @@
 	.twitter-card {
 		@apply relative min-h-[600px];
 
-		height: 350px;
+		height: fit-content;
 		aspect-ratio: 1.91 / 1; /** width = height * 1.91 */
 	}
 
