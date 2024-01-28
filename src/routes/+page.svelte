@@ -34,19 +34,24 @@
 	];
 </script>
 
-<div class="app p-10 flex flex-col justify-center items-center gap-10 w-full h-full">
-	<TwitterCard name="foobar" wallets={[]}>
-		<img src="/images/wallet_back.png" />
-	</TwitterCard>
+<div class="app p-10 flex flex-col justify-start items-start gap-10 w-full h-full">
+	<!-- <div class="w-[1024px]">
+		<TwitterCard name="foobar" wallets={[]}>
+			<img src="/images/wallet_back.png" />
+		</TwitterCard>
+	</div> -->
 
-	<TwitterCard name="foobar" {wallets}>
-		<img src="/images/wallet_back.png" />
-	</TwitterCard>
-	
-	<TwitterCard name="foobar" wallets={wallets.slice(0, 2)}>
-		<img src="/images/wallet_back.png" />
-	</TwitterCard>
-	
+	<!-- <div class="w-[1024px]">
+		<TwitterCard name="foobar" {wallets}>
+			<img src="/images/wallet_back.png" />
+		</TwitterCard>
+	</div> -->
+
+	<div class="w-[1024px]">
+		<TwitterCard name="foobar" wallets={wallets.slice(0, 2)}>
+			<img src="/images/wallet_back.png" />
+		</TwitterCard>
+	</div>
 </div>
 
 <style lang="postcss">
