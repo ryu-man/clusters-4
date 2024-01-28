@@ -11,6 +11,7 @@
 </script>
 
 <div class="twitter-card flex justify-center items-center">
+	<img src="/images/background.png" />
 	<div
 		class="twitter-card-inner z-[1] rounded-3xl bg-white/30 backdrop-blur-3xl text-white flex justify-between gap-8"
 	>
@@ -46,6 +47,7 @@
 			{/if}
 		</div>
 	</div>
+
 </div>
 
 <style lang="postcss">
@@ -56,8 +58,8 @@
 		aspect-ratio: 1.91 / 1; /** width = height * 1.91 */
 	}
 
-	.twitter-card::after {
-		@apply absolute inset-0 z-0;
+	img {
+		@apply absolute inset-0 z-0 p-6;
 		content: '';
 		background:
 			radial-gradient(
@@ -66,8 +68,7 @@
 				rgb(0 0 0/ 0.82) 0.01%,
 				rgb(0 0 0/ 0.21) 100%
 			),
-			rgb(0 0 0/ 0.4) url('/images/background.png') no-repeat;
-		background-size: cover;
+			rgb(0 0 0/ 0.4);
 		filter: contrast(1.2) brightness(0.5);
 	}
 
