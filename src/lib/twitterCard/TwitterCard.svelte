@@ -11,7 +11,7 @@
 </script>
 
 <div class="twitter-card flex justify-center items-center">
-	<img src="/images/background.png" />
+	<img src="/images/background.png" alt="twitter card" />
 	<div
 		class="twitter-card-inner z-[1] rounded-3xl bg-white/30 backdrop-blur-3xl text-white flex justify-between gap-32"
 	>
