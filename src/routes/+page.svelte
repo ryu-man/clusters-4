@@ -49,7 +49,7 @@
 
 	<div class="w-[1024px]">
 		<TwitterCard name="foobar" wallets={wallets.slice(0, 2)}>
-			<img src="/images/wallet_back.png" />
+			<img src="/images/wallet_back.png" alt="twitter card" />
 		</TwitterCard>
 	</div>
 </div>
